@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>DataVizGPS.js </title>
+    <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/8a76a783c2ba3d4779e92a892cc31fb0757fa4df/dist/aframe-extras.physics.min.js"></script>
+    <script src="https://raw.githack.com/jeromeetienne/AR.js/master/aframe/build/aframe-ar.min.js"></script>
+    <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+    <script>
+        THREEx.ArToolkitContext.baseURL = 'https://raw.githack.com/jeromeetienne/ar.js/master/three.js/'
+    </script>
+
+    <script src="./places.js"></script>
+	<script type="text/javascript" src="places.js"></script>
+	<script type="text/javascript" src="script.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+
+    <script src="https://unpkg.com/aframe-charts-component/dist/aframe-charts-component.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./style.css"/>
+
+    <script>
+      if (window.location.protocol == "http:")
+        window.location = "https://" + window.location.hostname;
+    </script>
+<script src="https://unpkg.com/aframe-charts-component/dist/aframe-charts-component.min.js"></script>
+<link rel="stylesheet" type="text/css" href="./style.css"/>
+<meta name="description" content=" A-Charts component." />
+<script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v5.0.0/dist/aframe-extras.min.js"></script>
+<script src="./components.min.js"></script>
+<script
+    src="https://unpkg.com/aframe-environment-component@1.0.0/dist/aframe-environment-component.min.js"></script>
+</head>
+    <body style='margin: 0; overflow: hidden;'>
+    <div class="centered instructions"></div>
+<a-scene antialias="true"
+        vr-mode-ui='enabled: false'
+        embedded
+        arjs='sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;'>
+        <a-assets>
+          <img
+            id="pnl1"
+            src="https://i.imgur.com/miwGfbY.jpg"
+          />
+        </a-assets>
+        <!-- Heartfelt comic -->
+        <a-image src="#pnl1" position="8 1.5 -1" rotation="8 -45 0"></a-image>
+        <a-entity geosimplebarchart='legend: true; axis: true;
+        data: [{"key":"Bangor University","size":10},{"key":"Manchester University","size":5},{"key":"North Wales University","size":9},{"key":"Library ","size":12},{"key":"Dean street","size":16},{"key":"SparkBrook","size":2},{"key":"Mancester","size":1},{"key":"Birmingham","size":8},{"key":"Gwyered","size":3},{"key":"URJC","size":6},{"key":"Alice","size":22},{"key":"Pete","size":2},{"key":"Seth","size":6},{"key":"Martin","size":9}]
+        ' position="0 -6 -10" rotation="0 0 0" width: 5; height: 5 ></a-entity>
+        
+
+
+        <a-entity movement-controls="fly: true" position="5 5 20">
+            <a-entity camera position="0 0 0" look-controls></a-entity>
+            <a-entity cursor="rayOrigin:mouse"></a-entity>
+            <a-entity laser-controls="hand: right"></a-entity>
+        </a-entity>
+        <a-entity id="marker7" mixin="marker" position="0 4 -3.99"></a-entity>
+        <a-entity
+          position="8 3 -12"
+          geometry="primitive: plane; width: 25; height: 25"
+          material="color: #0000FF"
+          text="color: white; align: center; font: https://cdn.aframe.io/fonts/DejaVu-sdf.fnt;
+                value: ">
+        </a-entity>
+        <a-plane src="https://i.imgur.com/zf7N9b9.jpg"  look-at="[gps-camera]" gps-entity-place="latitude: 53.229842600000005; longitude: -4.1239935;" position="0 3 -3" geometry="primitive: plane; width: 5; height: 5">
+        </a-plane>
+    <a-camera far="5000" gps-camera rotation-reader></a-camera>
+</a-scene >
+</body>
