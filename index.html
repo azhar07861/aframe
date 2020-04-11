@@ -30,32 +30,65 @@
 <meta name="description" content=" A-Charts component." />
 <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v5.0.0/dist/aframe-extras.min.js"></script>
 <script src="./components.min.js"></script>
+
+<!-- A-frame component and package to use more API functions such as, GPS -->
 <script
     src="https://unpkg.com/aframe-environment-component@1.0.0/dist/aframe-environment-component.min.js"></script>
 </head>
     <body style='margin: 0; overflow: hidden;'>
     <div class="centered instructions"></div>
-<a-scene antialias="true"
+
+
+
+ <!-- camera and display settings for the users-->
+    <a-scene antialias="true"
         vr-mode-ui='enabled: false'
         embedded
         arjs='sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;'>
+ <!-- Scene settings for the users devices (webcam) -->
+
+
+<!-- Image asset has been tested and works great for data visuslisation -->
         <a-assets>
           <img
             id="pnl1"
             src="https://i.imgur.com/miwGfbY.jpg"
           />
         </a-assets>
+ <!-- works great for the users-->
+
+
+
+
         <!-- Heartfelt comic -->
         <a-image src="#pnl1" position="8 1.5 -1" rotation="8 -45 0"></a-image>
+
+<!-- Graph below displayed data just for testing and it displays data for energy -->  
         <a-entity geosimplebarchart='legend: true; axis: true;
         data: [{"key":"Bangor University","size":10},{"key":"Manchester University","size":5},{"key":"North Wales University","size":9},{"key":"Library ","size":12},{"key":"Dean street","size":16},{"key":"SparkBrook","size":2},{"key":"Mancester","size":1},{"key":"Birmingham","size":8},{"key":"Gwyered","size":3},{"key":"URJC","size":6},{"key":"Alice","size":22},{"key":"Pete","size":2},{"key":"Seth","size":6},{"key":"Martin","size":9}]
         ' position="0 -5 -15" rotation="0 0 0" width: 5; height: 5 look-at="[gps-camera]" ></a-entity>
+<!-- it does not navigate yet becuase its a demo of how the data will look, example below displays data on the users location-->
 
 
+
+
+<!-- Graph to be displayed in dean stree Bangor University -->
+        <a-entity geosimplebarchart='legend: true; axis: true;
+        data: [{"key":"Bangor University","size":10},{"key":"Manchester University","size":5},{"key":"North Wales University","size":9},{"key":"Library ","size":12},{"key":"Dean street","size":16},{"key":"SparkBrook","size":2},{"key":"Mancester","size":1},{"key":"Birmingham","size":5},{"key":"Gwyered","size":3},{"key":"URJC","size":6},{"key":"Alice","size":22},{"key":"Pete","size":2},{"key":"Seth","size":6},{"key":"Martin","size":5}]
+        ' position="0 -5 -15"  look-at="[gps-camera]" gps-entity-place="latitude: 53.229842600000005; longitude: -4.1239935;" rotation="0 0 0" width: 5; height: 5  ></a-entity>
+<!-- This graph uses gps-entity-place="latitude: 53.229842600000005; longitude: -4.1239935;" and has been tested -->
+
+<!-- Controler for the user -->
         <a-entity movement-controls="fly: true" position="5 5 20">
+
+<!-- Camera position -->
             <a-entity camera position="0 0 0" look-controls></a-entity>
+
+<!--  user mouse settings -->
             <a-entity cursor="rayOrigin:mouse"></a-entity>
+<!-- user touch options with AR -->
             <a-entity laser-controls="hand: right"></a-entity>
+  <!-- entity for that makes the graph look good, graph background -->
         </a-entity>
         <a-entity id="marker7" mixin="marker" position="0 4 -3.99"></a-entity>
         <a-entity
@@ -65,7 +98,9 @@
           text="color: white; align: center; font: https://cdn.aframe.io/fonts/DejaVu-sdf.fnt;
                 value: ">
         </a-entity>
+ <!-- entity for that makes the graph look good, graph background -->
 
+  <!-- background texture graph-->
         <a-entity id="marker8" mixin="marker" position="0 4 -3.99"></a-entity>
         <a-entity
           position="8 20 -20"
@@ -73,15 +108,16 @@
           material="color: #0000FF"
           text="color: white; align: center; font: https://cdn.aframe.io/fonts/DejaVu-sdf.fnt;
                 value: ENERGY CONSUMPTION DATA BANGOR UNIVERSITY ">
-        </a-entity>
-
-
-
-
-
-
+            </a-entity>
+<!-- background texture graph-->
+        
+           <!-- Plane texture and it displays on the users location and it has been tested and well great for data visulisation -->
         <a-plane src="https://i.imgur.com/zf7N9b9.jpg"  look-at="[gps-camera]" gps-entity-place="latitude: 53.229842600000005; longitude: -4.1239935;" position="0 3 -3" geometry="primitive: plane; width: 5; height: 5">
         </a-plane>
+
+
     <a-camera far="5000" gps-camera rotation-reader></a-camera>
+
+
 </a-scene >
 </body>
