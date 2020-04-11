@@ -2,6 +2,23 @@
 <html>
 
 <head>
+    <details open>
+        <summary>Barebones WebXR DOM Overlay</summary>
+        <p>
+          This sample demonstrates extremely simple use of an
+          "immersive-ar" session with no library dependencies, with an
+          optional DOM overlay. It doesn't render anything exciting, just
+          draws a rectangle with a slowly changing color to prove it's
+          working.
+          <a class="back" href="./index.html">Back</a>
+        </p>
+        <div id="session-info"></div>
+        <div id="warning-zone"></div>
+        <button id="xr-button" class="barebones-button" disabled>
+          XR not found
+        </button>
+      </details>
+      
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>DataVizGPS.js </title>
@@ -13,9 +30,9 @@
     <script>
         THREEx.ArToolkitContext.baseURL = 'https://raw.githack.com/jeromeetienne/ar.js/master/three.js/'
     </script>
-
+<!-- scripts to use GPS locations from jeromina A-frame demo -->
     <script src="./places.js"></script>
-	<script type="text/javascript" src="places.js"></script>
+	<script type="text/javascript" src="./places.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css" />
 
     <script src="https://unpkg.com/aframe-charts-component/dist/aframe-charts-component.min.js"></script>
