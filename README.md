@@ -18,3 +18,9 @@ You must allow the Camera and GPS location! If location has not been allowed the
 
 This image is used to show a complete product in the real environment..
 ![This image is used to show a complete product in the real environment](./chart.jpg) 
+
+This application can be used for many other purposes! 
+such as for history classes, eductional purposes, business purposes, marketing purpose and much more! 
+
+Please get in touch for business purposes and report any issues! 
+azharkhalil@hotmail.co.uk 
