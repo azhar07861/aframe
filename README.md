@@ -4,3 +4,4 @@ This was a dissertation project and the purpose of this was to produce an AR app
 This is a location based service which only used A-frame and JavaScript libraries to visualise data in the real environment. 
 It did not use any other libraries but used a A-frame component such as, Angle. 
 It did not have much libraries which were compitable with AR as A-frame is mostly used for VR.
+![image](./chart.jpg)
