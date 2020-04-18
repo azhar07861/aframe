@@ -5,3 +5,5 @@ This is a location based service which only used A-frame and JavaScript librarie
 It did not use any other libraries but used a A-frame component such as, Angle. 
 It did not have much libraries which were compitable with AR as A-frame is mostly used for VR.
 ![image](./chart.jpg)
+This is a web based AR Application so you cannot expect it to work and provide graphics. It works great with a fast internet connection. 
+You must allow the Camera and GPS location! If location has not been allowed then it will not be able to track your location and provide accurate data. 
